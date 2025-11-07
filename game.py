@@ -20,7 +20,7 @@ YUKSEKLIK = 600
 
 # Ekranı oluştur
 ekran = pygame.display.set_mode((GENISLIK, YUKSEKLIK))
-pygame.display.set_caption("Retro Gemi Oyunu")
+pygame.display.set_caption("Retro Ship Game")
 
 # Durum Yönetimi
 OYUN_DURUMU = "OYNANIYOR" 
@@ -33,7 +33,6 @@ try:
 
 except Exception as e:
     # Eğer görsel yoksa, bu hata ile programı kapat
-    print(f"HATA: 'gemi.png' dosyası bulunamadı. Lütfen dosyanın 'oyun.py' ile aynı klasörde olduğundan emin olun! Hata: {e}")
     time.sleep(5) 
     pygame.quit()
     sys.exit() # 🌟 DÜZELTME: Doğru ve hata vermeyecek kapatma komutu!
@@ -104,13 +103,13 @@ def oyunu_sifirla():
 
 # Oyun Bitti Ekranını Çizme Fonksiyonu
 def oyun_bitti_ekrani(skor):
-    metin_kaybettin = buyuk_font.render("KAYBETTİN", True, KIRMIZI)
+    metin_kaybettin = buyuk_font.render("GAME OVER", True, KIRMIZI)
     ekran.blit(metin_kaybettin, (GENISLIK // 2 - metin_kaybettin.get_width() // 2, YUKSEKLIK // 4))
     
-    metin_skor = font.render(f"Skorun: {skor}", True, SARI)
+    metin_skor = font.render(f"Score: {skor}", True, SARI)
     ekran.blit(metin_skor, (GENISLIK // 2 - metin_skor.get_width() // 2, YUKSEKLIK // 4 + 100))
     
-    metin_tekrar = font.render("Tekrar oynamak için SPACE basın", True, BEYAZ)
+    metin_tekrar = font.render("SPACE to Play Again", True, BEYAZ)
     ekran.blit(metin_tekrar, (GENISLIK // 2 - metin_tekrar.get_width() // 2, YUKSEKLIK // 4 + 150))
 
 
@@ -221,7 +220,7 @@ while calisiyor:
         
         # Dokunulmazlık göstergesi
         if simdiki_zaman - son_hasar_zamani < HASAR_BEKLEME_SURESI:
-            pygame.draw.rect(ekran, KIRMIZI, gemi_rect, 3) 
+            pygame.draw.rect(ekran, KIRMIZI, gemi_rect, 2) 
             
         ekran.blit(gemi_resmi, (gemi_x, gemi_y))
 
@@ -232,10 +231,10 @@ while calisiyor:
             pygame.draw.rect(ekran, KIRMIZI, mermi)
         
         # Puanı ve Canı Ekrana Yazma
-        puan_metni = font.render(f"Skor: {puan}", True, BEYAZ) 
+        puan_metni = font.render(f"Score: {puan}", True, BEYAZ) 
         ekran.blit(puan_metni, (10, 10)) 
         
-        can_metni = font.render(f"Can: {can}", True, BEYAZ) 
+        can_metni = font.render(f"Life: {can}", True, BEYAZ) 
         ekran.blit(can_metni, (10, 50)) 
     
     elif OYUN_DURUMU == "OYUN_BITTI":
@@ -245,5 +244,4 @@ while calisiyor:
     pygame.display.flip()
 
 # Pygame'i kapat
-
 pygame.quit()
