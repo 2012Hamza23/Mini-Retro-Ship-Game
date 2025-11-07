@@ -1,20 +1,25 @@
-# Retro Gemi Oyunu🚀
+# Retro Spaceship Game 🚀
 
-Bu, Python ve Pygame kullanılarak bir 8. sınıf öğrencisi tarafından geliştirilmiş hızlı bir uzay nişancı oyunudur.
+This is a fast-paced space shooter game developed by an 8th-grade student using Python and Pygame.
 
-## Nasıl Oynanır?
-* **Hareket:** WASD veya Ok tuşları
-* **Ateş:** SPACE (Boşluk) tuşu
-* **Amaç:** Canınız bitmeden düşmanları yok etmek ve en yüksek skoru yapmak!
+## How to Play?
 
-## Kurulum (Python olanlar için)
-1. Bu projeyi indirin.
-2. Gerekli kütüphaneleri kurun: `pip install pygame`
-3. Oyunu çalıştırın: `python oyun.py`
+* **Movement:** WASD or Arrow Keys
+* **Fire:** SPACE key
+* **Goal:** Destroy enemies and achieve the highest score before running out of health!
 
-## İndirme (Windows .exe)
-Oyunun .exe dosyasını (internetsiz çalışır) 
+## Setup (For those with Python)
 
+1.  Download this project.
+2.  Install the required libraries: `pip install pygame`
+3.  Run the game: `python oyun.py`
 
-# **DİKKAT!! :** 
-Uygulamayı kurduğunuzda yanındaki .py ve .png dosyalarınıda aynı klasöre atınız. Aksi halde oyun çalışmaz.  
+## Download (Windows .exe)
+
+[LINK TO .EXE FILE HERE] - The game's .exe file (runs offline).
+
+---
+
+### ⚠️ ATTENTION!! 
+
+When setting up the application, make sure to place the accompanying `.py` and `.png` files in the same folder. Otherwise, the game will not run.
